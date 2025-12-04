@@ -3,6 +3,7 @@ from discord.ext import commands, tasks
 from discord import app_commands
 import json
 import os
+import io
 import datetime
 
 # -------------------
@@ -222,4 +223,8 @@ async def taoticket(interaction: discord.Interaction):
 # -------------------
 # RUN
 # -------------------
-bot.run("token")
+TOKEN = os.getenv("DISCORD_TOKEN")
+if not TOKEN:
+    print("Hãy set biến môi trường DISCORD_TOKEN.")
+else:
+    bot.run(TOKEN)
