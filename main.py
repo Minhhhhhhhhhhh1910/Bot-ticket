@@ -19,8 +19,8 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 CONFIG_FILE = "ticket_config.json"
 TICKET_DATA = "ticket_data.json"
 
-LOG_CHANNEL_ID = 1413442389422637137  # 🔹 ID kênh log
-CATEGORY_ID = 1421823728936816750     # 🔹 ID category chứa ticket
+LOG_CHANNEL_ID = 1445656196999811193  # 🔹 ID kênh log
+CATEGORY_ID = 1445062576148054119     # 🔹 ID category chứa ticket
 
 # -------------------
 # HÀM LƯU / LOAD JSON
@@ -217,7 +217,7 @@ async def taoticket(interaction: discord.Interaction):
         return await interaction.response.send_message("❌ Chưa có nút nào!", ephemeral=True)
 
     view = TicketView(config)
-    await interaction.channel.send("🎫 Nhấn nút bên dưới để tạo ticket:", view=view)
+    await interaction.channel.send("🎫 Nhấn nút bên dưới để tạo ticket LƯU Ý! NẾU TẠO TICKET KHÔNG LÝ DO THÌ SẼ BỊ MUTE 1DAY:", view=view)
     await interaction.response.send_message("✅ Menu ticket đã gửi!", ephemeral=True)
 
 # -------------------
